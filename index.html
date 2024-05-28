@@ -1,186 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Slideshow de Imagens</title>
+<title>TV ao Vivo</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h2 {
-    margin-top: 20px;
-  }
-  
-  .slideshow-container {
-    max-width: 800px;
-    position: relative;
-    margin: auto;
-  }
-
-  .mySlides {
-    display: none;
-  }
-
-  .slideshow-container img {
-    width: 100%;
+  .tv-screen {
+    width: 50%;
     height: auto;
+    margin: 0 auto;
+    display: block;
   }
 
-  /* Estilo para os botões de navegação */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-
-  /* Estilo para o indicador de pontos */
-  .dot-container {
+  .channel-list {
     text-align: center;
-    padding: 20px;
-    background: #333;
-  }
-
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-
-  /* Estilo para os canais */
-  .canais {
     margin-top: 20px;
-    text-align: center;
   }
 
-  .canal {
-    margin-bottom: 10px;
+  .channel {
+    display: inline-block;
+    margin: 10px;
   }
-
-  .canal img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+  
+  .play-icon {
+    width: 50px;
+    height: 50px;
   }
 </style>
 </head>
 <body>
-
-<h2>Slideshow de Imagens</h2>
-
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <img src="imagem1.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides fade">
-    <img src="imagem2.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides fade">
-    <img src="imagem3.jpg" style="width:100%">
-  </div>
-
-  <!-- Botões de navegação -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<div>
+  <img src="https://futemax.zip/assistir-globo-ao-vivo-tv-globo-online-24-horas-hd" alt="Tela da TV" class="tv-screen">
 </div>
 
-<!-- Indicadores de pontos -->
-<div class="dot-container" style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div>
-
-<!-- Canais -->
-<div class="canais">
-  <div class="canal">
-    <img src="caminho/para/sbt_logo.png" alt="SBT">
-    <p>SBT</p>
-    <!-- Adiciona o vídeo do YouTube para o SBT -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/e6g037T4jmw" frameborder="0" allowfullscreen></iframe>
+<div class="channel-list">
+  <div class="channel">
+    <a href="https://futemax.zip/assistir-globo-ao-vivo-tv-globo-online-24-horas-hd">
+      <img src="link_para_o_ícone_da_Globo" alt="Globo">
+      <img class="play-icon" src="link_para_ícone_do_play" alt="Play">
+    </a>
   </div>
-  <div class="canal">
-    <img src="caminho/para/band_logo.png" alt="GLOBO">
-    <p>Band</p>
-    <!-- Adiciona o vídeo do YouTube para a Band -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/HDDbzIEqqpU" frameborder="0" allowfullscreen></iframe>
+  <div class="channel">
+    <a href="#">
+      <img src="link_para_o_ícone_do_SBT" alt="SBT">
+      <img class="play-icon" src="link_para_ícone_do_play" alt="Play">
+    </a>
   </div>
-  <div class="canal">
-    <img src="caminho/para/redetv_logo.png" alt="RedeTV">
-    <p>RedeTV</p>
-    <!-- Adiciona o vídeo do YouTube para a RedeTV -->
-    <iframe width="560" height="315" src="https://jadieltv-online.github.io/tv-ao-vivo/rede-tv" frameborder="0" allowfullscreen></iframe>
+  <div class="channel">
+    <a href="#">
+      <img src="link_para_o_ícone_da_Band" alt="Band">
+      <img class="play-icon" src="link_para_ícone_do_play" alt="Play">
+    </a>
   </div>
 </div>
-
-<script>
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  // Avança/retrocede os slides quando os botões são clicados
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  // Avança para um slide específico quando um ponto é clicado
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  // Função principal para mostrar os slides
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // Muda a imagem a cada 2 segundos
-  }
-</script>
-
 </body>
 </html>

@@ -1,57 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TV ao Vivo</title>
-<style>
-  .tv-screen {
-    width: 50%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .channel-list {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .channel {
-    display: inline-block;
-    margin: 10px;
-  }
-  
-  .play-icon {
-    width: 50px;
-    height: 50px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV App</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .screen {
+            width: 70%;
+            height: 50%;
+            background-color: red;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .channel-options {
+            display: flex;
+            justify-content: space-around;
+            width: 70%;
+        }
+        .channel {
+            text-decoration: none;
+            color: inherit;
+            width: 30%;
+            height: 100px;
+            background-color: #333;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .channel:hover {
+            background-color: #555;
+        }
+        .screen img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
-<div>
-  <img src="https://futemax.zip/assistir-globo-ao-vivo-tv-globo-online-24-horas-hd" alt="Tela da TV" class="tv-screen">
-</div>
+    <div class="screen">
+        <img id="videoPlayer" src="" alt="">
+    </div>
+    <div class="channel-options">
+        <a href="#" class="channel" onclick="playVideo('http://painel.iptvmove.com:25461/live/danga07/1963/3490.m3u8')">Canal 1</a>
+        <a href="#" class="channel" onclick="playVideo('exemplo-video-2.mp4')">Canal 2</a>
+        <a href="#" class="channel" onclick="playVideo('exemplo-video-3.mp4')">Canal 3</a>
+    </div>
 
-<div class="channel-list">
-  <div class="channel">
-    <a href="https://futemax.zip/assistir-globo-ao-vivo-tv-globo-online-24-horas-hd">
-      <img src="link_para_o_ícone_da_Globo" alt="Globo">
-      <img class="play-icon" src="link_para_ícone_do_play" alt="Play">
-    </a>
-  </div>
-  <div class="channel">
-    <a href="#">
-      <img src="link_para_o_ícone_do_SBT" alt="SBT">
-      <img class="play-icon" src="link_para_ícone_do_play" alt="Play">
-    </a>
-  </div>
-  <div class="channel">
-    <a href="#">
-      <img src="link_para_o_ícone_da_Band" alt="Band">
-      <img class="play-icon" src="link_para_ícone_do_play" alt="Play">
-    </a>
-  </div>
-</div>
+    <script>
+        function playVideo(videoPath) {
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoPath;
+        }
+    </script>
 </body>
 </html>

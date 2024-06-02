@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Bot do Telegram</title>
-    <!-- Adicione estilos CSS aqui, se desejar -->
-    <style>
-        /* Estilos personalizados aqui */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bot com Stickers do Telegram</title>
 </head>
 <body>
-    <!-- Adicione o script do bot do Telegram aqui -->
-    <script async src="https://telegram.org/js/telegram-widget.js?9" data-telegram-post="botjadielacesse_bots_bot" data-width="100%"></script>
+
+<button id="startButton">Start</button>
+
+<div id="stickersContainer" style="display:none;">
+  <!-- Substitua os IDs abaixo pelos IDs dos seus stickers do Telegram -->
+  <img src="https://t.me/addstickers/CAACAgEAAxkBAAEMF2BmP1ZEF1gGB0RB2e92mInj18x8bAACMQIAAsOjKEdLBVdiYsQQXzUE" alt="Sticker 1">
+  <img src="https://t.me/addstickers/CAACAgIAAxkBAAEMO_hmW_WFzMqPbNisaHBHV-YDm3oG_gACMwADr8ZRGnokEoN5ub9iNQQ" alt="Sticker 2">
+  <!-- Adicione quantos stickers você quiser aqui -->
+</div>
+
+<script>
+  document.getElementById("startButton").addEventListener("click", function() {
+    document.getElementById("stickersContainer").style.display = "block";
+  });
+</script>
+
 </body>
 </html>
